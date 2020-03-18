@@ -6,18 +6,13 @@ export default {
     },
     {
       name: 'Home',
-      url: '/',
+      url: '/Home',
       icon: 'icon-home'
     },
     {
       name: 'Usuários',
       url: '/Usuario',
       icon: 'icon-user'
-    },
-    {
-      name: 'Cards',
-      url: '/base/cards',
-      icon: 'icon-puzzle',
     }
   ],
 };

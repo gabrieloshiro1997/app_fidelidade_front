@@ -1,36 +1,43 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-// import { renderRoutes } from 'react-router-config';
-import './App.scss';
+import {connect} from 'react-redux';
+import { NotificationContainer } from 'react-notifications';
+import Loading from 'react-fullscreen-loading';
 
+import './App.scss';
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 
 // Containers
 const DefaultLayout = React.lazy(() => import('./containers/DefaultLayout'));
 
 // Pages
-const Login = React.lazy(() => import('./views/Pages/Login'));
-const Register = React.lazy(() => import('./views/Pages/Register'));
-const Page404 = React.lazy(() => import('./views/Pages/Page404'));
-const Page500 = React.lazy(() => import('./views/Pages/Page500'));
+const Login = React.lazy(() => import('./components/login/Login'));
 
-class App extends Component {
-
-  render() {
-    return (
-      <BrowserRouter>
-          <React.Suspense fallback={loading()}>
-            <Switch>
-              <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
-              <Route exact path="/register" name="Register Page" render={props => <Register {...props}/>} />
-              <Route exact path="/404" name="Page 404" render={props => <Page404 {...props}/>} />
-              <Route exact path="/500" name="Page 500" render={props => <Page500 {...props}/>} />
-              <Route path="/" name="Home" render={props => <DefaultLayout {...props}/>} />
-            </Switch>
-          </React.Suspense>
-      </BrowserRouter>
-    );
+const MapStateToProps = state => {    
+  return {
+      ...state.GlobalReducer
   }
-}
+};
+
+const Loader = connect(MapStateToProps)((props) => (
+  <Loading 
+    loading={props.carregando} 
+    background="rgba(4, 4, 4, 0.58)" 
+    loaderColor="#FFFFFF" />
+));
+
+const App = () => (
+  <BrowserRouter>
+    <React.Suspense fallback={loading()}>
+      <Switch>
+        <Route exact path="/Login" name="Login" render={props => <Login {...props}/>} />
+        <Route path="/" render={props => <DefaultLayout {...props}/>} />
+        <Loader />  
+      </Switch>
+      <Loader />
+      <NotificationContainer />
+    </React.Suspense>
+  </BrowserRouter>
+)
 
 export default App;

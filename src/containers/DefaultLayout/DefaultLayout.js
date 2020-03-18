@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import * as router from 'react-router-dom';
 import { Container } from 'reactstrap';
 
@@ -14,30 +14,27 @@ import {
   AppBreadcrumb2 as AppBreadcrumb,
   AppSidebarNav2 as AppSidebarNav,
 } from '@coreui/react';
-// sidebar nav config
+
+// configuração de navegação da barra lateral
 import navigation from '../../_nav';
-// routes config
+// configoração das rotas
 import routes from '../../routes';
+
+import { isAuthenticated } from '../../services/Autenticação';
 
 const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 
 class DefaultLayout extends Component {
-
-  loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
-
-  signOut(e) {
-    e.preventDefault()
-    this.props.history.push('/login')
+  constructor(props){
+    super(props);
   }
 
   render() {
     return (
       <div className="app">
         <AppHeader fixed>
-          <Suspense  fallback={this.loading()}>
-            <DefaultHeader onLogout={e=>this.signOut(e)}/>
-          </Suspense>
+            <DefaultHeader />
         </AppHeader>
         <div className="app-body">
           <AppSidebar fixed display="lg">
@@ -52,29 +49,29 @@ class DefaultLayout extends Component {
           <main className="main">
             <AppBreadcrumb appRoutes={routes} router={router}/>
             <Container fluid>
-              <Suspense fallback={this.loading()}>
                 <Switch>
-                  {routes.map((route, idx) => {
-                    return route.component ? (
-                      <Route
-                        key={idx}
-                        path={route.path}
-                        exact={route.exact}
-                        name={route.name}
-                        render={props => (
-                          <route.component {...props} />
-                        )} />
-                    ) : (null);
-                  })}
+                  {
+                    isAuthenticated() ? (
+                      routes.map((route, idx) => {
+                        return route.component ? (
+                          <Route
+                            key={idx}
+                            path={route.path}
+                            exact={route.exact}
+                            name={route.name}
+                            render={props => (
+                              <route.component {...props} />
+                            )} />
+                        ) : this.props.history.push('/404')
+                      })
+                    ) : this.props.history.push('/login')
+                  }
                 </Switch>
-              </Suspense>
             </Container>
           </main>
         </div>
         <AppFooter>
-          <Suspense fallback={this.loading()}>
             <DefaultFooter />
-          </Suspense>
         </AppFooter>
       </div>
     );
@@ -82,3 +79,5 @@ class DefaultLayout extends Component {
 }
 
 export default DefaultLayout;
+
+

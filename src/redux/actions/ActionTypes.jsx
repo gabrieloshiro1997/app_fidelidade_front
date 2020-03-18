@@ -1,0 +1,14 @@
+//GLOBAL ACTIONS
+export const EXIBIR_LOADING = "EXIBIR_LOADING";
+export const ESCONDER_LOADING = "ESCONDER_LOADING";
+
+//LOGIN ACTIONS
+export const LOGIN = "LOGIN";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAIL = "LOGIN_FAIL";
+
+export const LOGOUT = "LOGOUT";
+
+export const RESET_SENHA = "RESET_SENHA";
+export const RESET_SENHA_SUCCESS = "RESET_SENHA_SUCCESS";
+export const RESET_SENHA_FAIL = "RESET_SENHA_FAIL";

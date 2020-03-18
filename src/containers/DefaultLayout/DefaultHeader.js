@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {  UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav } from 'reactstrap';
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { Logout } from '../../redux/actions/LoginActions'; 
 import { AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import logo from '../../assets/img/brand/logo.svg'
 import sygnet from '../../assets/img/brand/sygnet.svg'
@@ -13,6 +15,15 @@ const propTypes = {
 const defaultProps = {};
 
 class DefaultHeader extends Component {
+  constructor(props){
+    super(props);
+  }
+
+  logout(e) {
+    e.preventDefault();
+    this.props.Logout();
+    this.props.history.push('/Login');
+  }
   render() {
 
     // eslint-disable-next-line
@@ -32,7 +43,12 @@ class DefaultHeader extends Component {
               <img src={'../../assets/img/avatars/6.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
             </DropdownToggle>
             <DropdownMenu right>
-              <DropdownItem onClick={e => this.props.onLogout(e)}><i className="fa fa-lock"></i> Logout</DropdownItem>
+            <Link  className="dropdown-item" 
+                id="btnSair"    
+                to="/Login"
+                onClick={this.props.Logout}>
+                  <DropdownItem><i className="fa fa-lock"></i> Logout</DropdownItem>
+            </Link>
             </DropdownMenu>
           </UncontrolledDropdown>
         </Nav>
@@ -44,4 +60,4 @@ class DefaultHeader extends Component {
 DefaultHeader.propTypes = propTypes;
 DefaultHeader.defaultProps = defaultProps;
 
-export default DefaultHeader;
+export default connect(null, { Logout })(DefaultHeader);
