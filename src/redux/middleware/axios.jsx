@@ -2,7 +2,7 @@ import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
 import { NotificationManager } from 'react-notifications';
 
-import { ExibirLoading, EsconderLoading } from '../actions/GlobalActions';
+import { ExibirLoading, EsconderLoading } from '../actions/Global/GlobalActions';
 import { ApiUrl } from '../../utils/config';
 
 const httpClient = axios.create({

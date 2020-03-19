@@ -2,7 +2,7 @@
 import { 
     LOGIN, 
     LOGOUT,
-} from './ActionTypes'
+} from './LoginActionTypes'
 
 export const LoginUsuario = (email, senha) => ({
     type: LOGIN,

@@ -3,7 +3,7 @@ import {  UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav 
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { Logout } from '../../redux/actions/LoginActions'; 
+import { Logout } from '../../redux/actions/Login/LoginActions'; 
 import { AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import logo from '../../assets/img/brand/logo.svg'
 import sygnet from '../../assets/img/brand/sygnet.svg'
@@ -15,9 +15,6 @@ const propTypes = {
 const defaultProps = {};
 
 class DefaultHeader extends Component {
-  constructor(props){
-    super(props);
-  }
 
   logout(e) {
     e.preventDefault();

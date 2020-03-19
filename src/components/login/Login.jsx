@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 import { connect } from 'react-redux';
-import { LoginUsuario } from '../../redux/actions/LoginActions';
+import { LoginUsuario } from '../../redux/actions/Login/LoginActions';
 
 class Login extends Component {
     constructor(props){

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card } from 'reactstrap';
+// import { Card } from 'reactstrap';
 export default class Home extends Component {
     render(){
         return(

@@ -26,9 +26,6 @@ const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 
 class DefaultLayout extends Component {
-  constructor(props){
-    super(props);
-  }
 
   render() {
     return (

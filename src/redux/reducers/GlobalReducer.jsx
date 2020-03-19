@@ -1,7 +1,7 @@
 import {
     EXIBIR_LOADING,
     ESCONDER_LOADING
-} from '../actions/ActionTypes'
+} from '../actions/Global/GlobalActionTypes';
 
 const initialState = {
     carregando: false

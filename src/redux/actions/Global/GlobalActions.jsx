@@ -1,7 +1,7 @@
 import {
     EXIBIR_LOADING,
     ESCONDER_LOADING
-} from './ActionTypes'
+} from './GlobalActionTypes';
 
 export const ExibirLoading = () => ({
     type: EXIBIR_LOADING

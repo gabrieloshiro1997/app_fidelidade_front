@@ -5,7 +5,7 @@ import {
 import { 
     LOGOUT, 
     LOGIN_SUCCESS,
-} from '../actions/ActionTypes';
+} from '../actions/Login/LoginActionTypes';
 
 const registerJwt = (data) => {
     localStorage.setItem(ACCESS_TOKEN, data.token);           
