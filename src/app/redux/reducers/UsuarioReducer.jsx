@@ -7,7 +7,8 @@ import {
     EXIBIR_MODAL_FORMULARIO_USUARIO,
     ESCONDER_MODAL_FORMULARIO_USUARIO,
     EXIBIR_MODAL_EXCLUIR_USUARIO,
-    ESCONDER_MODAL_EXCLUIR_USUARIO
+	ESCONDER_MODAL_EXCLUIR_USUARIO,
+	CADASTRAR_CLIENTE_SUCCESS
 } from '../actions/Usuario/UsuarioActionTypes';
 
 import { NotificationManager } from 'react-notifications'
@@ -88,7 +89,12 @@ export default (state = initialState, action) => {
                 showModalExcluirUsuario: false
             }
         }
-        
+		
+		case CADASTRAR_CLIENTE_SUCCESS: {
+            NotificationManager.success('Cliente cadastrado com sucesso', 'Sucesso')
+            return {
+                ...state            }
+        }
         
         default:
             return state;       

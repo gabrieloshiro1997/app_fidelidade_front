@@ -7,7 +7,8 @@ import {
     EXIBIR_MODAL_FORMULARIO_USUARIO,
     ESCONDER_MODAL_FORMULARIO_USUARIO,
     EXIBIR_MODAL_EXCLUIR_USUARIO,
-    ESCONDER_MODAL_EXCLUIR_USUARIO
+	ESCONDER_MODAL_EXCLUIR_USUARIO,
+	CADASTRAR_CLIENTE
 } from './UsuarioActionTypes'
 
 export const ObterUsuarios = () => ({
@@ -76,4 +77,15 @@ export const ExibirModalExcluirUsuario = () => ({
 
 export const EsconderModalExcluirUsuario = () => ({
     type: ESCONDER_MODAL_EXCLUIR_USUARIO
+});
+
+export const CadastrarCliente = (cliente) => ({
+    type: CADASTRAR_CLIENTE,
+    payload: {
+        request: {
+            url: `/api/cliente`,
+            method: 'POST',
+            data: cliente
+        }
+    }
 });

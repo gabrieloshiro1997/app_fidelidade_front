@@ -13,8 +13,12 @@ const DefaultLayout = React.lazy(() => import('./containers/DefaultLayout'));
 // Pages
 const Login = React.lazy(() => import('./app/components/login/Login'));
 const Cadastro = React.lazy(() => import('./app/components/cadastro/Cadastro'));
-const CadastroEstabelecimento = React.lazy(() => import('./app/components/cadastro/CadastroEstabelecimento'));
-const CadastroCliente = React.lazy(() => import('./app/components/cadastro/CadastroCliente'));
+
+const CadastroEstabelecimento = React.lazy(() => import('./app/components/cadastro/estabelecimento/CadastroEstabelecimento'));
+const CadastroCliente = React.lazy(() => import('./app/components/cadastro/cliente/CadastroCliente'));
+
+const CadastroEstabelecimentoSucesso = React.lazy(() => import('./app/components/cadastro/estabelecimento/CadastroEstabelecimentoSucesso'));
+const CadastroClienteSucesso = React.lazy(() => import('./app/components/cadastro/cliente/CadastroClienteSucesso'));
 
 const MapStateToProps = state => {    
   return {
@@ -35,9 +39,14 @@ const App = () => (
       <Switch>
         <Route exact path="/Login" name="Login" render={props => <Login {...props}/>} />
         <Route exact path="/Cadastro" name="Cadastro" render={props => <Cadastro {...props}/>} />
+
         <Route exact path="/Cadastro/Estabelecimento" name="Cadastro de estabelecimento" render={props => <CadastroEstabelecimento {...props}/>} />
         <Route exact path="/Cadastro/Cliente" name="Cadastro de Cliente" render={props => <CadastroCliente {...props}/>} />
-        <Route path="/" render={props => <DefaultLayout {...props}/>} />
+        
+		<Route exact path="/Cadastro/Estabelecimento/Sucesso" name="Cadastro do estabelecimento efetuado com sucesso" render={props => <CadastroEstabelecimentoSucesso {...props}/>} />
+        <Route exact path="/Cadastro/Cliente/Sucesso" name="Cadastro do cliente efetuado com sucesso" render={props => <CadastroClienteSucesso {...props}/>} />
+        
+		<Route path="/" render={props => <DefaultLayout {...props}/>} />
         <Loader />  
       </Switch>
       <Loader />

@@ -14,6 +14,7 @@ import { connect } from 'react-redux';
 import { Form, Text } from 'informed';
 import { NotificationManager } from 'react-notifications'
 
+import TipoAcessoUsuarioEnum from '../../utils/TipoAcessoUsuarioEnum';
 import { 
   EsconderModalFormularioUsuario,
   CadastrarUsuario,
@@ -36,7 +37,8 @@ class ModalFormularioUsuario extends Component{
 
       let nome = data.nome; 
       let cpf = data.cpf; 
-      let email = data.email; 
+	  let email = data.email; 
+	  let acessoUsuario = TipoAcessoUsuarioEnum.Admin;
 
       if(!nome || !cpf || !email){
         NotificationManager.warning('Preencha todos campos!', 'Atenção');
@@ -47,7 +49,8 @@ class ModalFormularioUsuario extends Component{
         id: this.props.usuario.id ? this.props.usuario.id : null, 
         nome,
         cpf,
-        email
+		email,
+		acessoUsuario
       };
 
       if(this.props.usuario.id){
