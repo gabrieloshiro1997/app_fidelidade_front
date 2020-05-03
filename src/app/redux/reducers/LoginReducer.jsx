@@ -1,6 +1,6 @@
 import {
     ACCESS_TOKEN
-} from '../../utils/LocalStorageKeys'
+} from '../../../config/utils/LocalStorageKeys'
 
 import { 
     LOGOUT, 

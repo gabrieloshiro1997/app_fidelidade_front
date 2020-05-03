@@ -20,7 +20,7 @@ import navigation from '../../_nav';
 // configoração das rotas
 import routes from '../../routes';
 
-import { isAuthenticated } from '../../services/Autenticação';
+import { isAuthenticated } from '../../../src/config/services/Autenticação';
 
 const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));

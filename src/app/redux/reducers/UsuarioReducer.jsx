@@ -10,6 +10,8 @@ import {
     ESCONDER_MODAL_EXCLUIR_USUARIO
 } from '../actions/Usuario/UsuarioActionTypes';
 
+import { NotificationManager } from 'react-notifications'
+
 const initialState = {
     usuarios: [],
     usuario: {},
@@ -34,6 +36,7 @@ export default (state = initialState, action) => {
         }    
         
         case CADASTRAR_USUARIO_SUCCESS: {
+            NotificationManager.success('Usuário cadastrado com sucesso', 'Sucesso')
             return {
                 ...state,
                 showModalFormularioUsuario: false
@@ -41,6 +44,7 @@ export default (state = initialState, action) => {
         }
 
         case ATUALIZAR_USUARIO_SUCCESS: {
+            NotificationManager.success('Usuário atualizado com sucesso', 'Sucesso')
             return {
                 ...state,
                 showModalFormularioUsuario: false
@@ -48,6 +52,7 @@ export default (state = initialState, action) => {
         }
 
         case EXCLUIR_USUARIO_SUCCESS: {
+            NotificationManager.success('Usuário excluído com sucesso', 'Sucesso')
             return {
                 ...state,
                 showModalExcluirUsuario: false

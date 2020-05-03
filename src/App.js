@@ -11,7 +11,10 @@ const loading = () => <div className="animated fadeIn pt-3 text-center">Loading.
 const DefaultLayout = React.lazy(() => import('./containers/DefaultLayout'));
 
 // Pages
-const Login = React.lazy(() => import('./components/login/Login'));
+const Login = React.lazy(() => import('./app/components/login/Login'));
+const Cadastro = React.lazy(() => import('./app/components/cadastro/Cadastro'));
+const CadastroEstabelecimento = React.lazy(() => import('./app/components/cadastro/CadastroEstabelecimento'));
+const CadastroCliente = React.lazy(() => import('./app/components/cadastro/CadastroCliente'));
 
 const MapStateToProps = state => {    
   return {
@@ -31,6 +34,9 @@ const App = () => (
     <React.Suspense fallback={loading()}>
       <Switch>
         <Route exact path="/Login" name="Login" render={props => <Login {...props}/>} />
+        <Route exact path="/Cadastro" name="Cadastro" render={props => <Cadastro {...props}/>} />
+        <Route exact path="/Cadastro/Estabelecimento" name="Cadastro de estabelecimento" render={props => <CadastroEstabelecimento {...props}/>} />
+        <Route exact path="/Cadastro/Cliente" name="Cadastro de Cliente" render={props => <CadastroCliente {...props}/>} />
         <Route path="/" render={props => <DefaultLayout {...props}/>} />
         <Loader />  
       </Switch>

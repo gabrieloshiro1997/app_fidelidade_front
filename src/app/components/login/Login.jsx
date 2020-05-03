@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 import { NotificationManager, NotificationContainer } from 'react-notifications';
 import { connect } from 'react-redux';
@@ -65,7 +66,7 @@ class Login extends Component {
       <div className="app flex-row align-items-center">
         <Container>
           <Row className="justify-content-center">
-            <Col md="5">
+            <Col md="10">
               <CardGroup>
                 <Card className="p-4">
                   <CardBody>
@@ -93,10 +94,24 @@ class Login extends Component {
                           <Button onClick={(e) => this.login(e)} color="primary" className="px-4">Login</Button>
                         </Col>
                         <Col xs="6" className="text-right">
-                          <Button color="link" className="px-0">Forgot password?</Button>
+                          <Button color="link" className="px-0">Esqueci minha senha</Button>
                         </Col>
                       </Row>
                     </Form>
+                  </CardBody>
+                </Card>
+				<Card className="text-white bg-primary py-5 d-md-down-none" style={{ width: '44%' }}>
+                  <CardBody className="text-center">
+                    <div>
+                      <h2>Criar uma nova conta</h2>
+                      <p>Para efetuar o cadastro clique no link abaixo:</p>
+
+					  <div className="text-center">
+						<Link to="/Cadastro">
+							<Button color="primary" width='50' className="mt-3" active tabIndex={-1}>Realizar cadastro</Button>
+						</Link>
+					  </div>
+                    </div>
                   </CardBody>
                 </Card>
               </CardGroup>

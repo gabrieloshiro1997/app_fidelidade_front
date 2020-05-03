@@ -37,9 +37,8 @@ class ModalFormularioUsuario extends Component{
       let nome = data.nome; 
       let cpf = data.cpf; 
       let email = data.email; 
-      let senha = data.senha; 
 
-      if(!nome || !cpf || !email || !senha){
+      if(!nome || !cpf || !email){
         NotificationManager.warning('Preencha todos campos!', 'Atenção');
         return;
       }
@@ -48,8 +47,7 @@ class ModalFormularioUsuario extends Component{
         id: this.props.usuario.id ? this.props.usuario.id : null, 
         nome,
         cpf,
-        email,
-        senha
+        email
       };
 
       if(this.props.usuario.id){
@@ -92,14 +90,6 @@ class ModalFormularioUsuario extends Component{
                         <FormGroup>
                           <Label htmlFor="email">E-mail</Label>
                           <Text className="form-control" field="email" id="email" placeholder="Digite seu e-mail" />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs="12">
-                        <FormGroup>
-                          <Label htmlFor="senha">Senha</Label>
-                          <Text type="password" className="form-control" field="senha" id="senha" placeholder="Digite sua senha" />
                         </FormGroup>
                       </Col>
                     </Row>

@@ -3,7 +3,7 @@ import axiosMiddleware from 'redux-axios-middleware';
 import { NotificationManager } from 'react-notifications';
 
 import { ExibirLoading, EsconderLoading } from '../actions/Global/GlobalActions';
-import { ApiUrl } from '../../utils/config';
+import { ApiUrl } from '../../../config/utils/config';
 
 const httpClient = axios.create({
   baseURL: ApiUrl
