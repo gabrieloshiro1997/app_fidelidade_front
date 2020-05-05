@@ -13,6 +13,11 @@ export default {
       name: 'Usuários',
       url: '/Usuario',
       icon: 'icon-user'
-    }
+	},
+	{
+		name: 'Estabelecimentos',
+		url: '/Estabelecimento',
+		icon: 'icon-basket'
+	  }
   ],
 };

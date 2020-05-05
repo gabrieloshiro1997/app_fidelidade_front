@@ -48,7 +48,7 @@ class LoginCliente extends Component {
         }
 
         this.props.LoginUsuario(this.state.usuario, this.state.senha)
-        .then(() => this.props.history.push('/'));
+        .then(() => this.props.history.push('/Home'));
 
     }
     handleEnterPress(event) {

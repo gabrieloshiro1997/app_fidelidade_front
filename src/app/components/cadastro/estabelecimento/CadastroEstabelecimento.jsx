@@ -31,24 +31,24 @@ class CadastroEstabelecimento extends Component {
 	}
 
 	salvarEstabelecimento() {
-      let data = this.formApi.getValues();
+		let data = this.formApi.getValues();
 
-      let nomeFantasia = data.nomeFantasia; 
-      let cnpj = data.cnpj; 
-	  let email = data.email; 
-	//   let acessoUsuario = TipoAcessoUsuarioEnum.Estabelecimento;
+		let nomeFantasia = data.nomeFantasia; 
+		let cnpj = data.cnpj; 
+		let email = data.email; 
+		//   let acessoUsuario = TipoAcessoUsuarioEnum.Estabelecimento;
 
-      if(!nomeFantasia || !cnpj || !email){
-        NotificationManager.warning('Preencha todos campos!', 'Atenção');
-        return;
-      }
+		if(!nomeFantasia || !cnpj || !email){
+			NotificationManager.warning('Preencha todos campos!', 'Atenção');
+			return;
+		}
 
-      let estabelecimento = { 
-        nomeFantasia,
-        cnpj,
-		email,
-		// acessoUsuario
-      };
+		let estabelecimento = { 
+			nomeFantasia,
+			cnpj,
+			email,
+			// acessoUsuario
+		};
 
 		this.props.CadastrarEstabelecimento(estabelecimento)
 			.then((res) => {

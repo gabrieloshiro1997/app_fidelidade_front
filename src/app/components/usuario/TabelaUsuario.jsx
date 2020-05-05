@@ -28,7 +28,6 @@ class TabelaUsuario extends Component {
             <Table responsive>
                 <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>E-mail</th>
@@ -39,7 +38,6 @@ class TabelaUsuario extends Component {
                     {
                         this.props.usuarios.map((usuario, key) => (
                             <tr>
-                                <td>{usuario.id}</td>
                                 <td>{usuario.nome}</td>
                                 <td>{usuario.cpf}</td>
                                 <td>{usuario.email}</td>
