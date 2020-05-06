@@ -7,7 +7,7 @@ const Estabelecimento = React.lazy(() => import('./app/components/estabeleciment
 
 const routes = [
   { path: '/Home', exact: true, name: 'Home', component:  Home },
-  { path: '/usuario', exact: true, name: 'Usuário', component:  Usuario },
+  { path: '/Clientes', exact: true, name: 'Clientes', component:  Usuario },
   { path: '/Cadastro', exact: true, name: 'Cadastro', component:  Cadastro },
   { path: '/Estabelecimento', exact: true, name: 'Estabelecimento', component:  Estabelecimento },
 ];

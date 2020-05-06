@@ -16,7 +16,7 @@ const registerJwt = (data) => {
 	const decoded = decode(token);
 	
     localStorage.setItem(ACCESS_TOKEN, data.token);           
-    localStorage.setItem(TIPO_ACESSO, decoded.acessoUsuario);           
+    localStorage.setItem(TIPO_ACESSO, decoded.tipoUsuario);           
 }
 
 const Logout = () => {

@@ -4,7 +4,7 @@ import {
     Table 
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { ObterEstabelecimentos, ExibirModalAprovarEstabelecimento, DefinirEstabelecimento } from '../../redux/actions/Estabelecimento/EstabelecimentoActions';
+import { ObterEstabelecimentos, ExibirModalAprovarEstabelecimento, DefinirEstabelecimento, ExibirModalAlteracaoStatus } from '../../redux/actions/Estabelecimento/EstabelecimentoActions';
 
 class TabelaEstabelecimento extends Component {
     constructor(props){
@@ -15,6 +15,12 @@ class TabelaEstabelecimento extends Component {
 	exibirModalAprovacao(estabelecimento){
 		this.props.ExibirModalAprovarEstabelecimento();
 		this.props.DefinirEstabelecimento(estabelecimento);
+	}
+
+	exibirModalAlteracaoStatus(estabelecimento) {
+		this.props.ExibirModalAlteracaoStatus();
+		this.props.DefinirEstabelecimento(estabelecimento);
+
 	}
     render(){
         return(
@@ -35,12 +41,16 @@ class TabelaEstabelecimento extends Component {
                                 <td>{estabelecimento.cnpj}</td>
                                 <td>{estabelecimento.email}</td>
                                 <td>
-									{ estabelecimento.status_estabelecimento_id !== 1 &&
-	                                    <Button disabled className="fa fa-check btn-sm mx-1 bg-secondary" onClick={() => this.exibirModalAprovacao(estabelecimento)}></Button>								
+									{ estabelecimento.status_estabelecimento_id == 1 &&
+	                                    <Button className="fa fa-check btn-sm mx-1 bg-secondary" onClick={() => this.exibirModalAprovacao(estabelecimento)}></Button>								
 									}
 
-									{ estabelecimento.status_estabelecimento_id == 1 &&
-	                                    <Button  className="fa fa-check btn-sm mx-1 bg-primary" onClick={() => this.exibirModalAprovacao(estabelecimento)}></Button>								
+									{ estabelecimento.status_estabelecimento_id == 2 &&
+	                                    <Button  className="fa fa-check btn-sm mx-1 bg-success" onClick={() => this.exibirModalAlteracaoStatus(estabelecimento)}></Button>								
+									}
+
+									{ estabelecimento.status_estabelecimento_id == 3 &&
+	                                    <Button  className="fa fa-check btn-sm mx-1 bg-danger" onClick={() => this.exibirModalAlteracaoStatus(estabelecimento)}></Button>								
 									}
                                 </td>
                             </tr>
@@ -61,5 +71,6 @@ export default connect(MapStateToProps,
     {   
 		ObterEstabelecimentos,
 		ExibirModalAprovarEstabelecimento,
-		DefinirEstabelecimento
+		DefinirEstabelecimento,
+		ExibirModalAlteracaoStatus
     })(TabelaEstabelecimento);

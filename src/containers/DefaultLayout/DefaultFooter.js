@@ -16,7 +16,7 @@ class DefaultFooter extends Component {
     return (
       <React.Fragment>
         <span>App Fidelidade &copy; 2020.</span>
-        <span className="ml-auto">Powered by DK &amp; Betinho &amp; Pica-pau</span>
+        {/* <span className="ml-auto">Powered by DK &amp; Betinho &amp; Pica-pau</span> */}
       </React.Fragment>
     );
   }

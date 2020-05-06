@@ -1,5 +1,6 @@
 import { 
     OBTER_USUARIOS, 
+    OBTER_USUARIOS_ADMINISTRADORES, 
     OBTER_USUARIO,
     CADASTRAR_USUARIO,
     ATUALIZAR_USUARIO,
@@ -20,6 +21,16 @@ export const ObterUsuarios = () => ({
         }
     }
 });
+
+export const ObterUsuariosAdministradores = () => ({
+	type: OBTER_USUARIOS_ADMINISTRADORES,
+	payload: {
+		request: {
+            url: `/api/usuario/administradores`,
+            method: 'GET'
+        }
+	}
+})
 
 export const ObterUsuario = (id) => ({
     type: OBTER_USUARIO,

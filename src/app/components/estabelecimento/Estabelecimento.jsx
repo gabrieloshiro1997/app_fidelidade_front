@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux';
 import TabelaEstabelecimento from './TabelaEstabelecimento';
 import ModalAprovaçãoEstabelecimento from './ModalAprovacaoEstabelecimento';
+import ModalAlteracaoStatus from './ModalAlteracaoStatus';
 // import ModalDeletarUsuario from './ModalDeletarUsuario';
 import { ObterEstabelecimentos } from '../../redux/actions/Estabelecimento/EstabelecimentoActions';
 
@@ -31,6 +32,7 @@ class Estabelecimento extends Component {
             </CardBody>
           </Card>
 		  <ModalAprovaçãoEstabelecimento />
+		  <ModalAlteracaoStatus />
         </Col>
       )
   }

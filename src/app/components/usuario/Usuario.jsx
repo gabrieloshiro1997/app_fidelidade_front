@@ -18,9 +18,9 @@ class Usuario extends Component {
           <Col xs="12" lg="12">
             <Card>
               <CardHeader>
-                <big id="titulo-header-componente">Lista de usuários</big>
+                <big id="titulo-header-componente">Lista de Clientes</big>
                 <div className="card-header-actions">
-                  <Button className="fa fa-plus btn-sm mx-1 bg-success" onClick={() => this.props.ExibirModalFormularioUsuario()}></Button>
+                  {/* <Button className="fa fa-plus btn-sm mx-1 bg-success" onClick={() => this.props.ExibirModalFormularioUsuario()}></Button> */}
                 </div>
               </CardHeader>
               <CardBody>

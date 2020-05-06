@@ -6,7 +6,9 @@ import {
 	EXIBIR_MODAL_APROVAR_ESTABELECIMENTO,
 	ESCONDER_MODAL_APROVAR_ESTABELECIMENTO,
 	DEFINIR_ESTABELECIMENTO,
-	REMOVER_ESTABELECIMENTO
+	REMOVER_ESTABELECIMENTO,
+	EXIBIR_MODAL_ALTERACAO_STATUS,
+	ESCONDER_MODAL_ALTERACAO_STATUS
 } from './EstabelecimentoActionTypes'
 
 
@@ -79,3 +81,11 @@ export const DefinirEstabelecimento = (estabelecimento) => ({
 export const RemoverEstabelecimento = () => ({
 	type: REMOVER_ESTABELECIMENTO,
 });
+
+export const ExibirModalAlteracaoStatus = () => ({
+	type: EXIBIR_MODAL_ALTERACAO_STATUS
+})
+
+export const EsconderModalAlteracaoStatus = () => ({
+	type: ESCONDER_MODAL_ALTERACAO_STATUS
+})

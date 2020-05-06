@@ -17,6 +17,8 @@ import {
 
 // configuração de navegação da barra lateral
 import navigation from '../../_nav';
+import navigationEstabelecimento from '../../_navEstabelecimento';
+import navigationCliente from '../../_navCliente';
 // configoração das rotas
 import routes from '../../routes';
 
@@ -38,7 +40,16 @@ class DefaultLayout extends Component {
             <AppSidebarHeader />
             <AppSidebarForm />
             <Suspense>
-            <AppSidebarNav navConfig={navigation} {...this.props} router={router}/>
+				{ localStorage.getItem("TIPO_ACESSO") == 1 &&
+		            <AppSidebarNav navConfig={navigation} {...this.props} router={router}/>
+				}
+
+				{ localStorage.getItem("TIPO_ACESSO") == 2  &&
+		            <AppSidebarNav navConfig={navigationEstabelecimento} {...this.props} router={router}/>
+				}
+				{ localStorage.getItem("TIPO_ACESSO") == 3  &&
+		            <AppSidebarNav navConfig={navigationCliente} {...this.props} router={router}/>
+				}
             </Suspense>
             <AppSidebarFooter />
             <AppSidebarMinimizer />

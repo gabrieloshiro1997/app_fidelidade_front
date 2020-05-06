@@ -6,7 +6,9 @@ import {
 	EXIBIR_MODAL_APROVAR_ESTABELECIMENTO,
 	ESCONDER_MODAL_APROVAR_ESTABELECIMENTO,
 	DEFINIR_ESTABELECIMENTO,
-	REMOVER_ESTABELECIMENTO
+	REMOVER_ESTABELECIMENTO,
+	EXIBIR_MODAL_ALTERACAO_STATUS,
+	ESCONDER_MODAL_ALTERACAO_STATUS
 } from '../actions/Estabelecimento/EstabelecimentoActionTypes';
 
 import { NotificationManager } from 'react-notifications'
@@ -14,7 +16,8 @@ import { NotificationManager } from 'react-notifications'
 const initialState = {
 	estabelecimento: {},
 	estabelecimentos: [],
-	showModalAprovarEstabelecimento: false
+	showModalAprovarEstabelecimento: false,
+	showModalAlteracaoStatus: false
 }
 
 export default (state = initialState, action) => {
@@ -69,7 +72,22 @@ export default (state = initialState, action) => {
                 ...state,
 				estabelecimento: {}
 			}
+		}
+		
+		case EXIBIR_MODAL_ALTERACAO_STATUS: {
+            return {
+                ...state,
+                showModalAlteracaoStatus: true
+            }
         }
+
+        case ESCONDER_MODAL_ALTERACAO_STATUS: {
+            return {
+                ...state,
+                showModalAlteracaoStatus: false
+            }
+		}
+
         default:
             return state;       
     }

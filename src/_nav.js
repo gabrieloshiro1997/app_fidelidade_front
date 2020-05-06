@@ -10,8 +10,8 @@ export default {
       icon: 'icon-home'
     },
     {
-      name: 'Usuários',
-      url: '/Usuario',
+      name: 'Clientes',
+      url: '/Clientes',
       icon: 'icon-user'
 	},
 	{
