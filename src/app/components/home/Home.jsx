@@ -30,7 +30,13 @@ class Home extends Component {
 					}
 
 					{ localStorage.getItem("TIPO_ACESSO") == 3 &&
-						<h1>Cliente</h1>
+					<>
+						<CardHome className="w-100" classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Sua pontuação" icone="icon-user" />
+						<CardHome classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Sua pontuação" icone="icon-user" />
+						<CardHome classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Sua pontuação" icone="icon-user" />
+						<CardHome classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Sua pontuação" icone="icon-user" />
+						<CardHome classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Sua pontuação" icone="icon-user" />
+					</>
 					}	
 				</Row>
             </div>

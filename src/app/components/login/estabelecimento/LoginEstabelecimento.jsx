@@ -49,8 +49,11 @@ class LoginEstabelecimento extends Component {
 
         this.props.RealizarLoginEstabelecimento(this.state.usuario, this.state.senha)
         .then((res) => {
-			if(res.type == "LOGIN_ESTABELECIMENTO_SUCCESS")
-			this.props.history.push('/Home');
+			if(res.type == "LOGIN_ESTABELECIMENTO_SUCCESS") {
+				this.props.history.push('/Home');
+			} else {
+				this.props.history.push('/Login/Estabelecimento');
+			}
 		});
 
     }
