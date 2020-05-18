@@ -1,5 +1,4 @@
 import { 
-	CADASTRAR_ESTABELECIMENTO_SUCCESS,
 	OBTER_ESTABELECIMENTOS_SUCCESS,
 	APROVAR_ESTABELECIMENTO_SUCCESS,
 	REPROVAR_ESTABELECIMENTO_SUCCESS,
@@ -30,13 +29,6 @@ export default (state = initialState, action) => {
                 estabelecimentos: action.payload.data
             };
 		}
-		
-		case CADASTRAR_ESTABELECIMENTO_SUCCESS: {
-            NotificationManager.success('Estabelecimento cadastrado com sucesso', 'Sucesso');
-            return {
-				...state
-			}
-        }
 		
 		case APROVAR_ESTABELECIMENTO_SUCCESS:
 		case REPROVAR_ESTABELECIMENTO_SUCCESS: {

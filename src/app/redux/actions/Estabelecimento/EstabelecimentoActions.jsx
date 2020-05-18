@@ -1,5 +1,4 @@
-import { 
-	CADASTRAR_ESTABELECIMENTO,
+import {
 	OBTER_ESTABELECIMENTOS,
 	APROVAR_ESTABELECIMENTO,
 	REPROVAR_ESTABELECIMENTO,
@@ -10,18 +9,6 @@ import {
 	EXIBIR_MODAL_ALTERACAO_STATUS,
 	ESCONDER_MODAL_ALTERACAO_STATUS
 } from './EstabelecimentoActionTypes'
-
-
-export const CadastrarEstabelecimento = (estabelecimento) => ({
-    type: CADASTRAR_ESTABELECIMENTO,
-    payload: {
-        request: {
-            url: `/api/preCadastroEstabelecimento`,
-            method: 'POST',
-            data: estabelecimento
-        }
-    }
-});
 
 export const ObterEstabelecimentos = () => ({
     type: OBTER_ESTABELECIMENTOS,
