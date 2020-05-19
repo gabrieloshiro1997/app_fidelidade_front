@@ -3,12 +3,11 @@ import {
   Card, 
   CardBody, 
   CardHeader, 
-  Col, 
-  Button
+  Col
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import TabelaEstabelecimento from './TabelaEstabelecimento';
-import ModalAprovaçãoEstabelecimento from './ModalAprovacaoEstabelecimento';
+import ModalAprovacaoEstabelecimento from './ModalAprovacaoEstabelecimento';
 import ModalAlteracaoStatus from './ModalAlteracaoStatus';
 // import ModalDeletarUsuario from './ModalDeletarUsuario';
 import { ObterEstabelecimentos } from '../../redux/actions/Estabelecimento/EstabelecimentoActions';
@@ -31,7 +30,7 @@ class Estabelecimento extends Component {
 				<TabelaEstabelecimento />
             </CardBody>
           </Card>
-		  <ModalAprovaçãoEstabelecimento />
+		  <ModalAprovacaoEstabelecimento />
 		  <ModalAlteracaoStatus />
         </Col>
       )

@@ -18,26 +18,8 @@ class Home extends Component {
         return(
 			<div className="animated fadeIn">
 				<Row>
-					{ localStorage.getItem("TIPO_ACESSO") == 1 &&
-					<>
-						<CardHome classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Clientes" icone="icon-user" />
-						<CardHome classeCor="danger" quantidade={this.props.estabelecimentos.length} tipoCard="Estabelecimentos" icone="icon-basket" />
-					</>
-					}
-
-					{ localStorage.getItem("TIPO_ACESSO") == 2 &&
-						<h1>Estabelecimento</h1>
-					}
-
-					{ localStorage.getItem("TIPO_ACESSO") == 3 &&
-					<>
-						<CardHome className="w-100" classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Sua pontuação" icone="icon-user" />
-						<CardHome classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Sua pontuação" icone="icon-user" />
-						<CardHome classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Sua pontuação" icone="icon-user" />
-						<CardHome classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Sua pontuação" icone="icon-user" />
-						<CardHome classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Sua pontuação" icone="icon-user" />
-					</>
-					}	
+					<CardHome classeCor="info" quantidade={this.props.usuarios.length} tipoCard="Clientes" icone="icon-user" />
+					<CardHome classeCor="danger" quantidade={this.props.estabelecimentos.length} tipoCard="Estabelecimentos" icone="icon-basket" />
 				</Row>
             </div>
 

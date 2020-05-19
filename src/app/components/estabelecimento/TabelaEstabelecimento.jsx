@@ -41,15 +41,15 @@ class TabelaEstabelecimento extends Component {
                                 <td>{estabelecimento.cnpj}</td>
                                 <td>{estabelecimento.email}</td>
                                 <td>
-									{ estabelecimento.status_estabelecimento_id == 1 &&
+									{ estabelecimento.status_estabelecimento_id === 1 &&
 	                                    <Button className="fa fa-check btn-sm mx-1 bg-secondary" onClick={() => this.exibirModalAprovacao(estabelecimento)}></Button>								
 									}
 
-									{ estabelecimento.status_estabelecimento_id == 2 &&
+									{ estabelecimento.status_estabelecimento_id === 2 &&
 	                                    <Button  className="fa fa-check btn-sm mx-1 bg-success" onClick={() => this.exibirModalAlteracaoStatus(estabelecimento)}></Button>								
 									}
 
-									{ estabelecimento.status_estabelecimento_id == 3 &&
+									{ estabelecimento.status_estabelecimento_id === 3 &&
 	                                    <Button  className="fa fa-check btn-sm mx-1 bg-danger" onClick={() => this.exibirModalAlteracaoStatus(estabelecimento)}></Button>								
 									}
                                 </td>

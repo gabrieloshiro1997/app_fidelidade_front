@@ -49,7 +49,7 @@ class LoginAdmin extends Component {
 
         this.props.LoginUsuario(this.state.usuario, this.state.senha)
         .then((res) => {
-			if(res.type == "LOGIN_SUCCESS") {
+			if(res.type === "LOGIN_SUCCESS") {
 				this.props.history.push('/Home');
 			} else {
 				this.props.history.push('/Login/Admin');

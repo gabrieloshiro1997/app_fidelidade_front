@@ -3,8 +3,7 @@ import {
   Card, 
   CardBody, 
   CardHeader, 
-  Col, 
-  Button
+  Col
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import TabelaUsuario from './TabelaUsuario';
