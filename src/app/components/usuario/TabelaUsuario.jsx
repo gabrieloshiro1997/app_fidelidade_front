@@ -42,7 +42,7 @@ class TabelaUsuario extends Component {
                                 <td>{usuario.cpf}</td>
                                 <td>{usuario.email}</td>
                                 <td>
-                                    <Button className="fa fa-edit btn-sm mx-1 bg-primary" onClick={() => this.editarUsuario(usuario.id)}></Button>
+                                    {/* <Button className="fa fa-edit btn-sm mx-1 bg-primary" onClick={() => this.editarUsuario(usuario.id)}></Button> */}
                                     <Button className="fa fa-trash btn-sm mx-1 bg-danger" onClick={() => this.excluirUsuario(usuario.id)}></Button>
                                 </td>
                             </tr>

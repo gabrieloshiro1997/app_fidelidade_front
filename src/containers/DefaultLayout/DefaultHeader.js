@@ -34,15 +34,25 @@ class DefaultHeader extends Component {
 				<AppSidebarToggler className="d-md-down-none" display="lg" />
 				<Nav className="ml-auto" navbar>
 					<UncontrolledDropdown nav direction="down">
-						<DropdownToggle className="pr-3" nav>
-							<Link 
-								id="btnSair"
-								to="/Login"
-								onClick={this.props.Logout}>
-								<i id="icon-logout" class="fa fa-sign-out fa-2x" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Sair"></i>
-							</Link>
+						<DropdownToggle nav>
+							<i class="fa fa-cog fa-lg" aria-hidden="true"></i>
 						</DropdownToggle>
 						<DropdownMenu right>
+							<DropdownItem header tag="div" className="text-center"><strong>Opções</strong></DropdownItem>
+							{/* <DropdownItem onClick={() => this.exibirModal()}><i class="fa fa-user-circle" aria-hidden="true"></i>Editar Perfil</DropdownItem> */}
+							<DropdownItem header tag="div" className="text-center align-middle">
+								<Link
+									id="btnSair"
+									to="/Login"
+									onClick={this.props.Logout}
+									style={{
+										'text-decoration': 'none',
+										'color': '#000000'
+									}}>
+									<i id="icon-logout" class="fa fa-sign-out fa-lg mr-2" aria-hidden="true"></i>
+								Sair
+								</Link>
+							</DropdownItem>
 						</DropdownMenu>
 					</UncontrolledDropdown>
 				</Nav>
