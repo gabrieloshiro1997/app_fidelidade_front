@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { ObterUsuarios, ObterUsuario, ExibirModalFormularioUsuario, ExibirModalExcluirUsuario } from '../../redux/actions/Usuario/UsuarioActions';
-
+import { addMaskCpf } from '../../utils/helper';
 class TabelaUsuario extends Component {
     constructor(props){
         super(props);
@@ -39,7 +39,7 @@ class TabelaUsuario extends Component {
                         this.props.usuarios.map((usuario, key) => (
                             <tr>
                                 <td>{usuario.nome}</td>
-                                <td>{usuario.cpf}</td>
+                                <td>{addMaskCpf(usuario.cpf)}</td>
                                 <td>{usuario.email}</td>
                                 <td>
                                     {/* <Button className="fa fa-edit btn-sm mx-1 bg-primary" onClick={() => this.editarUsuario(usuario.id)}></Button> */}

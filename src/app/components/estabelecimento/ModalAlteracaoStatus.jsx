@@ -13,7 +13,7 @@ import { AprovarEstabelecimento,
 	EsconderModalAlteracaoStatus,
 	ObterEstabelecimentos } 
 from '../../redux/actions/Estabelecimento/EstabelecimentoActions';
-
+import { addMaskCnpj } from '../../utils/helper';
 class ModalAlteracaoStatus extends Component {
 	constructor(props){
 		super(props);
@@ -42,7 +42,7 @@ class ModalAlteracaoStatus extends Component {
               <ModalHeader toggle={() => this.props.EsconderModalAlteracaoStatus()}>Selecione o status que você quer definir para o estabelecimento abaixo</ModalHeader>
               <ModalBody>
 				<h6 ><b>Nome Fantasia:</b> { this.props.estabelecimento.nome_fantasia}</h6>
-				<h6><b>CNPJ:</b> { this.props.estabelecimento.cnpj}</h6>
+				<h6><b>CNPJ:</b> { addMaskCnpj(this.props.estabelecimento.cnpj)}</h6>
 				<h6><b>Email:</b> { this.props.estabelecimento.email}</h6>
 
               </ModalBody>

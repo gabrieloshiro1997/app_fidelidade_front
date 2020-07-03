@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { ObterEstabelecimentos, ExibirModalAprovarEstabelecimento, DefinirEstabelecimento, ExibirModalAlteracaoStatus } from '../../redux/actions/Estabelecimento/EstabelecimentoActions';
+import { addMaskCnpj } from '../../utils/helper';
 
 class TabelaEstabelecimento extends Component {
     constructor(props){
@@ -38,7 +39,7 @@ class TabelaEstabelecimento extends Component {
                         this.props.estabelecimentos.map((estabelecimento, key) => (
                             <tr key={key}>
                                 <td>{estabelecimento.nome_fantasia}</td>
-                                <td>{estabelecimento.cnpj}</td>
+                                <td>{addMaskCnpj(estabelecimento.cnpj)}</td>
                                 <td>{estabelecimento.email}</td>
                                 <td>
 									{ estabelecimento.status_estabelecimento_id === 1 &&
