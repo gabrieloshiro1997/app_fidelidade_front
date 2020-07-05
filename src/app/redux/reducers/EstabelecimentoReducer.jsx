@@ -23,7 +23,6 @@ export default (state = initialState, action) => {
     switch(action.type){
 		
 		case OBTER_ESTABELECIMENTOS_SUCCESS: {
-			console.log(action.payload, 'reducer')
             return {
                 ...state,
                 estabelecimentos: action.payload.data

@@ -12,6 +12,8 @@ const DefaultLayout = React.lazy(() => import('./containers/DefaultLayout'));
 
 // Pages
 const Login = React.lazy(() => import('./app/components/login/Login'));
+const EsqueciMinhaSenha = React.lazy(() => import('./app/components/login/EsqueciMinhaSenha'));
+const RedefinirSenha = React.lazy(() => import('./app/components/login/RedefinirSenha'));
 
 const MapStateToProps = state => {    
   return {
@@ -31,6 +33,8 @@ const App = () => (
     <React.Suspense fallback={loading()}>
       <Switch>
 		<Route exact path="/Login" name="Login" render={props => <Login {...props}/>} />
+		<Route exact path="/EsqueciMinhaSenha" name="Esqueci minha senha" render={props => <EsqueciMinhaSenha {...props}/>} />
+		<Route exact path="/RedefinirSenha/:token/:email" name="Redefinir senha" render={props => <RedefinirSenha {...props}/>} />
 		<Route path="/" render={props => <DefaultLayout {...props}/>} />
         <Loader />  
       </Switch>

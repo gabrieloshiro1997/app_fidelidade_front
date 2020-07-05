@@ -34,7 +34,6 @@ export const AprovarEstabelecimento = (id) => ({
 });
 
 export const ReprovarEstabelecimento = (id) => {
-	console.log('Reprovar estabelecimento', id);
 	return {
 		type: REPROVAR_ESTABELECIMENTO,
 		payload: {

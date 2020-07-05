@@ -57,7 +57,6 @@ class ModalFormularioUsuario extends Component{
         this.props.AtualizarUsuario(usuario)
           .then(() => this.props.ObterUsuarios());
       } else {
-        console.log('cadastrar')
         this.props.CadastrarUsuario(usuario)
           .then(() => this.props.ObterUsuarios());
       }
